@@ -1,0 +1,65 @@
+@import url(//db.onlinewebfonts.com/c/dffb2b80813d195d26fa4d2aad48b059?family=Gotham+Rounded);
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif; 
+    /* sans-serif is default here when the main font is not found*/
+    font-weight: normal;
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C); 
+    /* first color is to the left and second to right*/
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    /* grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px,auto) repeat(5,100px); */
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: minmax(75px,auto) repeat(5, 75px);
+}
+
+.calculator-grid > button{
+    cursor: pointer;
+    /* font-size: 2rem; */
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255,.75);
+}
+
+.calculator-grid > button:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1 / -1;
+    background-color: rgba(0,0,0,.75);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 10px;
+    /* to break words in output screen  */
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand{
+    color: rgba(255,255,255,.75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: white;
+    font-size: 2.5rem;
+}
